@@ -9,11 +9,11 @@ WiFiClient wifiClient;
 // Qubitro Client
 QubitroMqttClient mqttClient(wifiClient);
 // Device Parameters
-char deviceID[] = "a4b6dd7f-be6e-4b92-b5c6-658f0aa65ed0";
-char deviceToken[] = "rqlg14R0n3oIfi-Ieu8NzF46zRyggwUIdm2igfk$";
+char deviceID[] = "ADD_DEVICE_UNIQUE_ID";
+char deviceToken[] = "ADD_DEVICE_UNIQUE_TOKEN";
 // WiFi Parameters
-const char* ssid = "Zuluxia";
-const char* password = "akshita1506";
+const char* ssid = "ADD_WIFI_SSID";
+const char* password = "ADD_WIFI_PASSWORD";
 const int MPU_addr=0x68;
 int16_t AcX,AcY,AcZ,Tmp,GyX,GyY,GyZ;
 int minVal=265;
@@ -22,7 +22,7 @@ double x;
 double y;
 double z;
 Adafruit_MPU6050 mpu;
-void setup(void) {
+void setup() {
 // Initialize the serial port
   serial_init();
   // Initialize wireless connectivity
@@ -35,7 +35,7 @@ Wire.write(0x6B);
 Wire.write(0);
 Wire.endTransmission(true);
   while (!Serial)
-    delay(10); // will pause Zero, Leonardo, etc until serial console opens
+    delay(10); 
   Serial.println("Adafruit MPU6050 test!");
   // Try to initialize!
   if (!mpu.begin()) {
@@ -148,14 +148,13 @@ Serial.println(z);
   Serial.println(" degC");
   Serial.println("");
   delay(500);
-  String payload = "{\"AngleX \":" + String(x)+ \"AngleY \":" + String(y)+ \"AngleZ \":" + String(z)+ \"Acceleration X\":" + String(a.acceleration.x)+ \"Acceleration Y\":" + String(a.acceleration.y)+\"Acceleration Z \":" + String(a.acceleration.z)+ "}";
+  String payload = "{\"AngleX\": " + String(x) + ",\"AngleY\":" + String(y) + ",\"AngleZ\":" + String(z) + ",\"Temperature: \":" + String(temp.temperature) +  ",\"Rotation X:\":" + String(g.gyro.x) +  ",\"Rotation Y:\":" + String(g.gyro.y) +  ",\"Rotation Z:\":" + String(g.gyro.z)+"}";
   mqttClient.poll();
   mqttClient.beginMessage(deviceID);
   mqttClient.print(payload);
   mqttClient.endMessage();
   // Delay
   delay(30 * 1000);
-}
 }
 // Initialization code
 void serial_init() {
