@@ -7,7 +7,7 @@ These times when everyone is working from home, the main problem we are facing i
 
 The MPU-6050 is a 3-axis accelerometer and 3-axis gyroscope sensor. The accelerometer measures the gravitational acceleration, and the gyroscope measures the rotational velocity and temperature.
 
-Hardware Requirements
+### Hardware Requirements
 
 NodeMCU ESP8266
 
