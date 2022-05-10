@@ -12,8 +12,8 @@ QubitroMqttClient mqttClient(wifiClient);
 char deviceID[] = "a4b6dd7f-be6e-4b92-b5c6-658f0aa65ed0";
 char deviceToken[] = "rqlg14R0n3oIfi-Ieu8NzF46zRyggwUIdm2igfk$";
 // WiFi Parameters
-const char* ssid = "Zuluxia";
-const char* password = "akshita1506";
+const char* ssid = "Your ssid";
+const char* password = "Your password";
 const int MPU_addr=0x68;
 int16_t AcX,AcY,AcZ,Tmp,GyX,GyY,GyZ;
 int minVal=265;
