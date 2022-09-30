@@ -1,7 +1,7 @@
 
 # Acceleration, Rotation, Temperature Analysis using MPU-6050, ESP8266, and Qubitro.
 
-https://www.hackster.io/akshitagupta15june/art-analysis-using-mpu-6050-esp8266-and-qubitro-a19a4a (Visit this for detailed instructions)
+https://www.hackster.io/akshitagupta15june/art-analysis-using-mpu-6050-esp8266-and-qubitro-a19a4a Visit this site for detailed instructions
 
 we are going to learn how to measure gravitational acceleration, rotational velocity, and temperature using the MPU-6050 accelerometer and gyroscope module, NodeMCU ESP8266, and Qubitro.
 
